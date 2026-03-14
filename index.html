@@ -5,6 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Servicio de evaluaciones psicológicas orientadas al autismo. Información clara, proceso transparente y acompañamiento respetuoso para familias y adultos.">
   <title>Evaluaciones Psicológicas — Autismo | Servicio profesional</title>
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <!-- Open Graph / redes sociales -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Evaluaciones Psicológicas — Autismo">
+  <meta property="og:description" content="Servicio de evaluaciones psicológicas orientadas al autismo. Información clara, proceso transparente y acompañamiento respetuoso para familias y adultos.">
+  <meta property="og:image" content="https://ed34.netlify.app/og-image.png">
+  <meta property="og:url" content="https://ed34.netlify.app">
+  <meta property="og:locale" content="es_AR">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Evaluaciones Psicológicas — Autismo">
+  <meta name="twitter:description" content="Servicio de evaluaciones psicológicas orientadas al autismo.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -29,6 +41,7 @@
           <li><a href="#dirigido">A quién</a></li>
           <li><a href="#equipo">Equipo</a></li>
           <li><a href="#contacto">Contacto</a></li>
+          <li><a href="#recursos">Recursos</a></li>
           <li><a href="#preguntas">Preguntas frecuentes</a></li>
         </ul>
       </nav>
@@ -125,7 +138,12 @@
         <h2 id="titulo-contacto" class="section-title">Contacto y solicitud de turno</h2>
         <p class="contact-intro">Escribinos para consultar disponibilidad, aranceles o cualquier duda. Te respondemos a la brevedad.</p>
         <div class="contact-grid">
-          <form class="form" action="#" method="post" id="form-contacto" aria-labelledby="titulo-contacto">
+          <form class="form" id="form-contacto" name="contacto" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" aria-labelledby="titulo-contacto" netlify>
+            <input type="hidden" name="form-name" value="contacto">
+            <p class="form-honeypot" aria-hidden="true">
+              <label for="bot-field">No completar</label>
+              <input type="text" name="bot-field" id="bot-field" tabindex="-1" autocomplete="off">
+            </p>
             <div class="form-group">
               <label for="nombre">Nombre y apellido <span class="required">*</span></label>
               <input type="text" id="nombre" name="nombre" required autocomplete="name">
@@ -162,6 +180,7 @@
               <li><a href="https://wa.me/5491112345678" target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
             </ul>
             <p class="contact-note">Reemplazá estos datos por tu email, teléfono y enlace de WhatsApp real.</p>
+            <p class="contact-address"><strong>Consultorio:</strong> [Dirección, ciudad — opcional]</p>
           </div>
         </div>
       </div>
@@ -189,7 +208,32 @@
               <p>Consultá directamente por correo o teléfono para conocer las opciones de cobertura y modalidad de pago. Te daremos la información actualizada al momento de tu consulta.</p>
             </dd>
           </div>
+          <div class="faq-item">
+            <dt><button type="button" class="faq-question" aria-expanded="false" aria-controls="faq-4" id="faq-q4" data-target="faq-4">¿Desde qué edad realizan evaluaciones?</button></dt>
+            <dd id="faq-4" class="faq-answer" role="region" aria-labelledby="faq-q4" hidden>
+              <p>Realizamos evaluaciones desde la primera infancia (a partir de los 2 años aproximadamente, según el motivo de consulta) hasta la vida adulta. La modalidad y las herramientas se adaptan a cada edad y a cada persona.</p>
+            </dd>
+          </div>
+          <div class="faq-item">
+            <dt><button type="button" class="faq-question" aria-expanded="false" aria-controls="faq-5" id="faq-q5" data-target="faq-5">¿Cuánto demora todo el proceso?</button></dt>
+            <dd id="faq-5" class="faq-answer" role="region" aria-labelledby="faq-q5" hidden>
+              <p>La duración depende de cada caso: cantidad de entrevistas, pruebas indicadas y disponibilidad. En el primer contacto te daremos una estimación orientativa según tu situación.</p>
+            </dd>
+          </div>
         </dl>
+      </div>
+    </section>
+
+    <section id="recursos" class="section" aria-labelledby="titulo-recursos">
+      <div class="container">
+        <h2 id="titulo-recursos" class="section-title">Recursos sobre autismo</h2>
+        <p class="recursos-intro">Enlaces a información seria y respetuosa. Revisá y actualizá según tu criterio profesional.</p>
+        <ul class="recursos-list">
+          <li><a href="https://www.who.int/es/news-room/fact-sheets/detail/autism-spectrum-disorders" target="_blank" rel="noopener noreferrer">OMS — Trastornos del espectro autista</a></li>
+          <li><a href="https://www.autismspeaks.org/es" target="_blank" rel="noopener noreferrer">Autism Speaks (español)</a></li>
+          <li><a href="https://www.argentina.gob.ar/salud/neurodesarrollo" target="_blank" rel="noopener noreferrer">Argentina.gob — Neurodesarrollo</a></li>
+          <li><a href="https://www.aap.org/en/patient-care/autism/" target="_blank" rel="noopener noreferrer">AAP — Autism (en inglés)</a></li>
+        </ul>
       </div>
     </section>
 
@@ -208,6 +252,11 @@
       <p class="footer-text">© <span id="year"></span> Evaluaciones psicológicas orientadas al autismo. Todos los derechos reservados.</p>
     </div>
   </footer>
+
+  <!-- Botón WhatsApp (reemplazá el número en el href) -->
+  <a href="https://wa.me/5491112345678?text=Hola%2C%20consulto%20por%20las%20evaluaciones%20psicol%C3%B3gicas%20orientadas%20al%20autismo." class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Escribinos por WhatsApp">
+    <span class="whatsapp-float-icon" aria-hidden="true">WhatsApp</span>
+  </a>
 
   <script src="js/main.js"></script>
 </body>

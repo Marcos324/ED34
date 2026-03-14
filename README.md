@@ -9,8 +9,10 @@ Sitio web informativo para un servicio de evaluaciones psicológicas en el conte
 - **Proceso**: pasos desde el primer contacto hasta el informe
 - **A quién está dirigido**: niñas/niños, adolescentes, adultos
 - **Equipo**: espacio para describir al profesional o equipo (texto placeholder)
-- **Contacto**: formulario y datos de email, teléfono y WhatsApp (reemplazar por datos reales)
-- **Preguntas frecuentes**: acordeón con 3 preguntas
+- **Contacto**: formulario (Netlify Forms), email, teléfono, WhatsApp y botón flotante
+- **Preguntas frecuentes**: acordeón con 5 preguntas
+- **Recursos**: enlaces a información seria sobre autismo
+- **Gracias**: página mostrada tras enviar el formulario (si configurás redirección en Netlify)
 - **Aviso importante**: disclaimer sobre carácter orientativo y confidencialidad
 
 ## Cómo ejecutar en local
@@ -26,19 +28,24 @@ Sitio web informativo para un servicio de evaluaciones psicológicas en el conte
 ```
 dw45/
 ├── index.html      # Página principal (single page)
+├── gracias.html    # Página de agradecimiento tras enviar el formulario
+├── favicon.svg     # Ícono del sitio
 ├── css/
 │   └── styles.css  # Estilos
 ├── js/
-│   └── main.js     # Menú móvil, FAQ acordeón, formulario
+│   └── main.js     # Menú móvil, FAQ acordeón, estado del formulario
+├── DEPLOY.md       # Instrucciones GitHub + Netlify
 └── README.md
 ```
 
 ## Qué personalizar
 
-- **Datos de contacto**: en la sección Contacto, reemplazá `contacto@ejemplo.com`, el teléfono y el enlace de WhatsApp por los reales.
-- **Equipo**: en la sección "Quién realiza las evaluaciones", reemplazá el texto entre corchetes por el nombre, título y descripción del profesional o equipo.
-- **Logo**: si tenés un logo, podés reemplazar el texto "Evaluaciones Autismo" en el header por una imagen (`<img>` con `alt` descriptivo).
-- **Formulario**: el envío está simulado en JavaScript. Para que envíe de verdad, conectá el `form` a tu backend o a un servicio (por ejemplo Formspree, Netlify Forms, etc.).
+- **Datos de contacto**: en `index.html`, reemplazá `contacto@ejemplo.com`, el teléfono y los enlaces de WhatsApp (formulario + botón flotante) por los reales. El botón flotante usa `href="https://wa.me/5491112345678?text=..."` — cambiá el número.
+- **Equipo**: en "Quién realiza las evaluaciones", reemplazá el texto entre corchetes por el nombre, título y descripción del profesional o equipo.
+- **Consultorio**: reemplazá `[Dirección, ciudad — opcional]` en Contacto si tenés dirección física.
+- **Logo**: si tenés un logo, reemplazá el texto "Evaluaciones Autismo" en el header por una imagen (`<img>` con `alt` descriptivo).
+- **Formulario**: ya está conectado a **Netlify Forms**. Los envíos aparecen en Netlify → Site → Forms. Para que después de enviar redirija a una página de gracias: en Netlify → Forms → "Form handling" → "Redirect to" → `/gracias.html`.
+- **Redes sociales**: si tu sitio no es `https://ed34.netlify.app`, cambiá en `index.html` las meta `og:url` y `og:image` por tu URL real. Para que al compartir el enlace se vea una imagen, subí una imagen `og-image.png` (1200×630 px) a la raíz del proyecto.
 
 ## Despliegue
 

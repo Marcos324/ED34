@@ -57,21 +57,16 @@
     });
   });
 
-  // Formulario: evitar envío real (sin backend), mostrar mensaje
+  // Formulario: Netlify Forms lo procesa al enviar (no preventDefault).
+  // Opcional: mostrar estado "Enviando..." mientras se envía
   var form = document.getElementById('form-contacto');
   if (form) {
-    form.addEventListener('submit', function (e) {
-      e.preventDefault();
+    form.addEventListener('submit', function () {
       var btn = form.querySelector('button[type="submit"]');
-      var originalText = btn.textContent;
-      btn.textContent = 'Mensaje enviado (simulado)';
-      btn.disabled = true;
-      // En producción aquí iría el envío real (fetch a tu backend o servicio).
-      setTimeout(function () {
-        btn.textContent = originalText;
-        btn.disabled = false;
-        form.reset();
-      }, 2500);
+      if (btn) {
+        btn.textContent = 'Enviando…';
+        btn.disabled = true;
+      }
     });
   }
 })();
